@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Dynamic form</title>
+</head>
+<body>
+    <h2>Result....{{column}}</h2>
+
+<form action="sub" method="get">  
+    {% csrf_token  %}
+    <ul id="forms">
+    columns in form:
+    {% for column,key,return in valve %}
+    
+        
+        {%if key == 0 %}
+        
+        <li>do you have/is your home {{column}}</li>   
+        <h5>boolean</h5>
+        <input type="radio" id="{{return}}" name="{{return}}" value="False">
+        <label for="0">No</label><br><br>
+        <input type="radio" id="{{return}}" name="{{return}}" value="True">
+        <label for="1">Yes</label><br><br>
+        
+        
+        {%endif%}
+        {%if key == 1 %}
+        <li>How many of the following do you have{{column}}</li>
+        <h5>number</h5>
+        <input type="text" id="{{return}}" name="{{return}}"><br>
+        
+        {%endif%}
+        {% if column == "id" %}
+        primary key
+        {%endif%}
+    {% endfor %}
+    </ul>
+    
+   <input type="submit">    
+</form>
+</body>    
+{% endblock %}

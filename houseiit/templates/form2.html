@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 28 01:39:33 2020
+
+@author: Hitesh
+"""
+
+
+{% extends "base.html"%}
+{% block content %}
+<h1> this is a test </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Dynamic form</title>
+</head>
+<body>
+    <h2>Result....</h2>
+    <form action="sub" method="post">
+        columns in form:
+         {% csrf_token  %}
+            {% for column in valve %}
+            columns:{{column}}
+            {% if  column[1]== 0 %}
+            type is bool
+            {% end if %}
+            {% if column[1]==1 %}
+            type is num
+            {%end if %}
+            {% endfor %}
+    </form>
+</body>

@@ -1,0 +1,67 @@
+{% extends "base.html"%}
+{% block content %}
+<h1> this is a test </h1>
+<form action="add" method="post">
+
+    {% csrf_token  %}
+    
+    <label for="addr">Enter addr:</label><br>
+    <input type="text" id="addr" name="addr"><br>
+    
+    <br> Type of property <br>
+    <input type="radio" id="Sharing" name="type" value="Sharing">
+    <label for="sharing">Sharing</label><br>
+    <input type="radio" id="Flat" name="type" value="Flat">
+    <label for="Flat">Flat</label><br>
+    <input type="radio" id="PG" name="type" value="PG">
+    <label for="Flat">Paying Guest</label><br>
+    
+    <br> Type of Students <br>
+        <input type="radio" id="students" name="students" value="Anyone">
+        <label for="Anyone">No Limitations</label><br><br>
+        <input type="radio" id="students" name="students" value="bachelor">
+        <label for="bachelors">Bachelors only</label><br><br>
+         <input type="radio" id="students" name="students" value="masters">
+        <label for="masters">masters only</label><br><br>
+        <input type="radio" id="students" name="students" value="phds">
+        <label for="pdhs">phds only</label><br><br>   
+     <br>
+
+    
+    <br> Curfew <br>
+    
+        <input type="radio" id="times" name="times" value="False">
+        <label for="0">No curfew</label><br><br>
+        <input type="radio" id="times" name="times" value="True">
+        <label for="1">Limitations</label><br><br>
+        
+            
+    
+    
+    
+    
+    <label for="rent">rent</label><br>
+    <input type="text" id="rent" name="rent"><br>
+   
+    <br> Negotiable<br>
+        <input type="radio" id="nego1" name="nego1" value="False">
+        <label for="0">Not Negotiable</label><br><br>
+        <input type="radio" id="nego1" name="nego1" value="True">
+        <label for="1">Negotiable</label><br><br>
+         <br>
+    <label for="deposit">deposit</label><br>
+    <input type="text" id="deposit" name="deposit"><br>
+    
+    <br> Negotiable<br>
+    <input type="radio" id="nego2" name="nego2" value="False">
+        <label for="0">Not Negotiable</label><br><br>
+        <input type="radio" id="nego2" name="nego2" value="True">
+        <label for="1">Negotiable</label><br><br>
+         <br>
+        
+   
+   
+
+   <input type="submit">      
+</form>
+{% endblock %}

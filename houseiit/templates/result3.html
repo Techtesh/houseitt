@@ -1,0 +1,31 @@
+
+
+
+{% extends "base.html"%}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Dynamic form</title>
+</head>
+<body>
+    <h2>Unter Testing....{{column}}</h2>
+<form action="mul" method="get">  
+    {% csrf_token  %}
+    <ul id="forms">
+    columns in form:<br>
+    {% for column,return in valve %}
+    is {{column}} allowed?<br>
+    <input type="radio" id="{{return}}" name="{{return}}" value="False">
+        <label for="0">No</label><br>
+        <input type="radio" id="{{return}}" name="{{return}}" value="True">
+        <label for="1">Yes</label><br>
+    {% endfor %}
+    </ul>
+    
+   <input type="submit">   
+</form>
+</body>    
+{% endblock %}
+    
